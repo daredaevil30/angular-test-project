@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-sm bg-white rounded-lg shadow-md p-6">
+        <div class="grid grid-col items-center justify-center mb-4">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-2">Ingest Voyager</h2>
+            <span class="text-sm font-normal italic text-center text-gray-600 mb-4">Fetch Western Union transactions in
+                just a
+                few clicks.</span>
+        </div>
+
+        <form [formGroup]="loginForm">
+            <div class="flex items-center justify-center mb-4">
+                <p-iftalabel class="w-full">
+                    <input pInputText id="txt-username" class="w-full" formControlName="username"
+                        placeholder="Enter your username" />
+                    <label for="txt-username" class="w-full">Username</label>
+                </p-iftalabel>
+            </div>
+            <div class="flex items-center justify-center mb-4">
+                <!-- <p-iftalabel class="w-full">
+                    <input pInputText id="txt-password" type="password" class="w-full" formControlName="password" placeholder="Enter your password"/>
+                    <label for="txt-password" class="w-full">Password</label>
+                </p-iftalabel> -->
+                <p-iftalabel class="w-full">
+                    <p-password id="txt-password" class="w-full" [style]="{'width':'100%'}" [feedback]="false"
+                        [inputStyle]="{'width':'100%'}" [toggleMask]="true" formControlName="password"
+                        placeholder="Enter your password" />
+                    <label for="txt-password" class="w-full">Password</label>
+                </p-iftalabel>
+            </div>
+            <div class="flex items-center justify-center">
+                <p-button icon="pi pi-sign-in" label="Login" type="submit" (onClick)="onSubmit()" />
+            </div>
+        </form>
+    </div>
+</div>
